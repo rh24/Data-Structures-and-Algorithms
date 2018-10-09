@@ -1,5 +1,6 @@
 ﻿using Xunit;
 using arrayShift;
+using static arrayShift.Program;
 
 namespace ArrayShiftUnitTests
 {
@@ -12,7 +13,7 @@ namespace ArrayShiftUnitTests
             // act
             // assert
 
-            Assert.Equal(new int[] {1, 2, 3, 4, 5}, Program.ArrayShift(new int[] {1, 2, 4, 5}, 3));
+            Assert.Equal(new int[] {1, 2, 3, 4, 5}, ArrayShift(new int[] {1, 2, 4, 5}, 3));
         }
     }
 }
