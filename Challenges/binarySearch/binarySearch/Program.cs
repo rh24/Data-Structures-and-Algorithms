@@ -18,7 +18,9 @@ namespace binarySearch
 
             while (start <= end)
             {
-                int middle = end / 2;
+                int middle;
+                if (end % 2 != 0) middle = end / 2;
+                else middle = (end / 2) + 1;
 
                 if (input[middle] == target) return middle;
                 if (target < input[middle]) end = middle - 1;
