@@ -2,14 +2,14 @@
 
 namespace arrayShift
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            //ArrayShift();
+            ArrayShift(new int[] {1, 2, 4, 5}, 3);
         }
 
-        static int[] ArrayShift(int[] input, int val)
+        public static int[] ArrayShift(int[] input, int val)
         {
             int[] newArr = new int[input.Length + 1];
             int middle = input.Length % 2 == 0 ? newArr.Length / 2 : (newArr.Length / 2) + 1;
