@@ -6,10 +6,12 @@ namespace binarySearch
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("hello");
+            Console.WriteLine(BinarySearch(new int[] { 1, 3, 6, 7 }, 3).ToString());
+            Console.ReadLine();
         }
 
-        static int BinarySearch(int[] input, int target)
+        public static int BinarySearch(int[] input, int target)
         {
             int start = 0;
             int end = input.Length - 1;
@@ -18,8 +20,8 @@ namespace binarySearch
             {
                 int middle = end / 2;
 
-                if (middle == target) return middle;
-                if (middle < target) end = middle - 1;
+                if (input[middle] == target) return middle;
+                if (target < input[middle]) end = middle - 1;
                 else start = middle + 1;
             }
 
