@@ -17,6 +17,7 @@ namespace ArrayBinarySearchTests
 
         [Theory]
         [InlineData(new int[] { 1, 3, 6, 7 }, 3, 1)]
+        [InlineData(new int[] { 1, 3, 6, 7, 8, 9 }, 9, 5)]
         [InlineData(new int[] { 2 }, 2, 0)]
         [InlineData(new int[] { 2 }, 5, -1)]
         [InlineData(new int[] { 0, 0, 0 }, 2, -1)]
