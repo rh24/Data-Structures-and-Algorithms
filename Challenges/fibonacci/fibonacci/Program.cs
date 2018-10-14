@@ -1,19 +1,19 @@
 ﻿using System;
 
-namespace fibonacci
+namespace Fibonacci
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             for (int i = 0; i < 30; i++)
             {
-                Console.WriteLine(Fibonacci(i));
+                Console.WriteLine(IterativeFibonacci(i));
             }
             Console.ReadLine();
         }
 
-        public static int Fibonacci(int n)
+        public static int IterativeFibonacci(int n)
         {
             // starting numbers
             int x = 0;
