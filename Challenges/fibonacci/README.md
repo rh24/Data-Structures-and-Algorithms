@@ -13,4 +13,4 @@ Space compexity: O(1)
 
 This whiteboard was done by my mock interview partner and classmate Tre Cain.
 
-![fibonacci_tre](https://slack-files.com/T039KG69K-FDF0FBDAB-28b47619bc)
+![fibonacci_tre](http://i.imgur.com/nsrM7F0.jpg)
