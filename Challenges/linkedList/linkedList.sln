@@ -7,8 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "linkedList", "linkedList\li
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Classes", "Classes", "{5CB503AC-4FDD-4D32-ABB4-CB375724B4F6}"
 	ProjectSection(SolutionItems) = preProject
-		Class1.cs = Class1.cs
-		Class2.cs = Class2.cs
+		LList.cs = LList.cs
+		Node.cs = Node.cs
 	EndProjectSection
 EndProject
 Global

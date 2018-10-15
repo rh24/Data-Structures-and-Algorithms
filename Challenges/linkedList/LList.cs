@@ -2,7 +2,7 @@
 
 public class LList
 {
-    public Class1()
+    public LList()
     {
     }
 }
