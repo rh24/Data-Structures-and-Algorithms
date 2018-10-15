@@ -1,12 +1,17 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-public class Node
+namespace LinkedList.Classes
 {
-    public int Value { get; set; }
-    public Node Next { get; set; }
-
-    public Node(int value)
+    public class Node
     {
-        Value = value;
+        public int Value { get; set; }
+        public Node Next { get; set; }
+
+        public Node(int value)
+        {
+            Value = value;
+        }
     }
 }

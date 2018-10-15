@@ -1,8 +1,19 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Text;
 
-public class LList
+namespace LinkedList.Classes
 {
-    public LList()
+    public class LList
     {
+        /// <summary>
+        /// First node in the LL.
+        /// </summary>
+        public Node Head { get; set; }
+        public Node Current { get; set; }
+
+        public LList()
+        {
+        }
     }
 }
