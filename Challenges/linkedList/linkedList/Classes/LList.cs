@@ -25,7 +25,7 @@ namespace linkedList.Classes
         }
 
         /// <summary>
-        /// Adding a node at the beginning is O(n)_
+        /// Adding a node at the beginning is O(n).
         /// </summary>
         /// <param name="node"></param>
         public void Add(Node node)
@@ -36,6 +36,7 @@ namespace linkedList.Classes
         }
 
         // we have to traverse the LL in order to print, so it's linear time. O(n).
+        // O(1) because adding no aditional memory.
         public void Print()
         {
             Current = Head;
@@ -49,5 +50,79 @@ namespace linkedList.Classes
             Console.WriteLine($"{Current.Value} --> NULL");
             Current = Head;
         }
+
+        // O(n) because we have to traverse through entire LL.
+        // O(1) because no additional memory.
+        public void Append(Node node)
+        {
+            Current = Head;
+
+            while (Current.Next != null)
+            {
+                Current = Current.Next;
+            }
+
+            Current.Next = node;
+            Current = Head;
+        }
+
+        // O(n) because we have to traverse the entire LL.
+        // O(1) because no additional memory.
+        public void AddBefore(Node newNode, Node existingNode)
+        {
+            Current = Head;
+
+            if (Head.Value == existingNode.Value)
+            {
+                Add(newNode);
+                return;
+            }
+
+            while (Current.Next != null)
+            {
+                if (Current.Next.Value == existingNode.Value)
+                {
+                    Current.Next = newNode;
+                    newNode.Next = existingNode;
+                }
+
+                Current = Current.Next;
+            }
+        }
+
+        // AddAfter
+        public void AddAfter(Node newNode, Node existingNode)
+        {
+            Current = Head;
+
+            while (Current.Next != null)
+            {
+                if (Current.Next.Value == existingNode.Value)
+                {
+                    Current = Current.Next;
+                    Current.Next = newNode;
+                }
+            }
+        }
+
+        // Find => returns a Node
+        // O(n) time. O(1) space.
+        public Node Find(Node nodeToFind)
+        {
+            Current = Head;
+
+            while (Current.Next != null)
+            {
+                if (Current.Value == nodeToFind.Value)
+                {
+                    return Current;
+                }
+
+                Current = Current.Next;
+            }
+
+            return null;
+        }
+
     }
 }

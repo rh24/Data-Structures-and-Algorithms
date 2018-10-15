@@ -1,5 +1,5 @@
 ﻿using System;
-using LinkedList.Classes;
+using linkedList.Classes;
 
 namespace LinkedList
 {
@@ -8,6 +8,9 @@ namespace LinkedList
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+
+            Node node = new Node(1);
+            LList ll = new LList(node);
         }
     }
 }
