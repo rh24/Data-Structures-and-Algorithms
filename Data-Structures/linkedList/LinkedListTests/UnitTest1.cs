@@ -18,6 +18,11 @@ namespace LinkedListTests
             Node newNode = new Node(0);
             ll.Add(newNode);
             Assert.Equal(0, ll.Find(newNode).Value);
+
+            // Test AddBefore
+            Node addNode = new Node(5);
+            ll.AddBefore(addNode, newNode);
+            Assert.Equal(addNode.Next, newNode);
         }
 
         //// print append addbefore add after
@@ -41,5 +46,15 @@ namespace LinkedListTests
         {
             Assert.True(ll.Print());
         }
+
+        /// <summary>
+        /// Test AddBefore
+        /// </summary>
+        //    [Fact]
+        //    public void TestAddBefore()
+        //    {
+        //        Node addNode = new Node("x");
+        //        ll.AddBefore(addNode, ll.Find());
+        //    }
     }
 }
