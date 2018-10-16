@@ -38,18 +38,28 @@ namespace linkedList.Classes
 
         // we have to traverse the LL in order to print, so it's linear time. O(n).
         // O(1) because adding no aditional memory.
-        public void Print()
+        public bool Print()
         {
-            Current = Head;
-
-            while (Current.Next != null)
+            try
             {
-                Console.WriteLine($"{Current.Value} -->");
-                Current = Current.Next;
+                Current = Head;
+
+                while (Current.Next != null)
+                {
+                    Console.WriteLine($"{Current.Value} -->");
+                    Current = Current.Next;
+                }
+
+                Console.WriteLine($"{Current.Value} --> NULL");
+                Current = Head;
+
+            }
+            catch (Exception)
+            {
+                throw;
             }
 
-            Console.WriteLine($"{Current.Value} --> NULL");
-            Current = Head;
+            return true;
         }
 
         // O(n) because we have to traverse through entire LL.

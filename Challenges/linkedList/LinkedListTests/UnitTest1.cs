@@ -15,15 +15,16 @@ namespace LinkedListTests
         [Fact]
         public void TestAddAndFind()
         {
-            Node newNode = new Node(0);
-            ll.Add(newNode);
-            Assert.Equal(0, ll.Find(newNode).Value);
+            Node existing = new Node(0);
+            ll.Add(existing);
+            Assert.Equal(0, ll.Find(existing).Value);
         }
 
         [Fact]
-        public void Test1()
+        public void TestPrint()
         {
 
         }
+
     }
 }
