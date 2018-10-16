@@ -46,15 +46,5 @@ namespace LinkedListTests
         {
             Assert.True(ll.Print());
         }
-
-        /// <summary>
-        /// Test AddBefore
-        /// </summary>
-        //    [Fact]
-        //    public void TestAddBefore()
-        //    {
-        //        Node addNode = new Node("x");
-        //        ll.AddBefore(addNode, ll.Find());
-        //    }
     }
 }
