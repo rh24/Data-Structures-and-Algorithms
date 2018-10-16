@@ -10,7 +10,7 @@ namespace LinkedListTests
         public static LList ll = new LList(node);
 
         /// <summary>
-        /// Test Add and Find
+        /// Test All adding methods and Find
         /// </summary>
         [Fact]
         public void AddAndFind()
@@ -23,20 +23,16 @@ namespace LinkedListTests
             Node addNode = new Node(5);
             ll.AddBefore(addNode, newNode);
             Assert.Equal(addNode.Next, newNode);
-        }
 
-        //// print append addbefore add after
-        //[Fact]
-        //public void TestAddAfter()
-        //{
-        //    Node newNode = new Node(4);
-        //    Node existingNode = new Node(3);
-        //    // 3, 0, 1
-        //    ll.Add(existingNode);
-        //    // 3, 4, 0, 1
-        //    ll.AddAfter(existingNode, newNode);
-        //    Assert.Equal(0, newNode.Next.Value);
-        //}
+            // ll looks like => 5, 0, 1
+
+            Node nodeToAdd = new Node(7);
+            //Test AddAfter
+            ll.AddAfter(nodeToAdd, newNode.Next);
+            // 5, 0, 1, 7
+            Assert.Null(nodeToAdd.Next);
+            Assert.Equal(1, newNode.Next.Value);
+        }
 
         /// <summary>
         /// Test print

@@ -104,16 +104,19 @@ namespace linkedList.Classes
         // AddAfter
         public void AddAfter(Node newNode, Node existingNode)
         {
-            Current = Head;
+            //Current = Head;
 
-            while (Current.Next != null)
-            {
-                if (Current.Next.Value == existingNode.Value)
-                {
-                    Current.Next.Next = newNode;
-                    newNode.Next = Current.Next.Next.Next;
-                }
-            }
+            //while (Current.Next != null)
+            //{
+            //    if (Current.Next.Value == existingNode.Value)
+            //    {
+            //        Current.Next.Next = newNode;
+            //        newNode.Next = Current.Next.Next;
+            //    }
+            //}
+            Node whereToAddAfter = Find(existingNode);
+            Current.Next = newNode;
+            newNode.Next = Current.Next.Next;
         }
 
         // Find => returns a Node
