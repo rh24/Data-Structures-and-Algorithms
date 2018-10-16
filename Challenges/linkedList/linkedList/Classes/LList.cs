@@ -22,6 +22,7 @@ namespace linkedList.Classes
         /// <param name="head"></param>
         public LList(Node head)
         {
+            Head = head;
         }
 
         /// <summary>
@@ -99,8 +100,8 @@ namespace linkedList.Classes
             {
                 if (Current.Next.Value == existingNode.Value)
                 {
-                    Current = Current.Next;
-                    Current.Next = newNode;
+                    Current.Next.Next = newNode;
+                    newNode.Next = Current.Next.Next.Next;
                 }
             }
         }
