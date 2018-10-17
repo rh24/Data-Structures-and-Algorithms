@@ -20,7 +20,6 @@ namespace LLKthTest
             // Instantiate a new LL
             LList ll = new LList(node0);
 
-            ll.Add(node0);
             ll.Add(node1);
             ll.Add(node2);
 

@@ -29,10 +29,10 @@ namespace LinkList.Classes
         /// <param name="node"></param>
         public void Add(Node node)
         {
-            //Current = Head;
+            Current = Head;
             node.Next = Head;
             Head = node;
-            //Current = Head;
+            Current = Head;
         }
 
         // we have to traverse the LL in order to print, so it's linear time. O(n).
