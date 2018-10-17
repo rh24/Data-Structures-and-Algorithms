@@ -1,5 +1,8 @@
 ﻿using System;
-using linkedList.Classes;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace LinkedList
 {
@@ -7,10 +10,11 @@ namespace LinkedList
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+        }
 
-            Node node = new Node(1);
-            LList ll = new LList(node);
+        static void FindKthElement()
+        {
+            // whiteboard code here
         }
     }
 }
