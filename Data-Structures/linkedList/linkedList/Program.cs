@@ -1,5 +1,5 @@
 ﻿using System;
-using linkedList.Classes;
+using LinkedList.Classes;
 
 namespace LinkedList
 {

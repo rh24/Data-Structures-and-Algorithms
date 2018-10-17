@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace linkedList.Classes
+namespace LinkedList.Classes
 {
     public class LList
     {
@@ -106,17 +106,20 @@ namespace linkedList.Classes
         {
             //Current = Head;
 
-            //while (Current.Next != null)
-            //{
-            //    if (Current.Next.Value == existingNode.Value)
-            //    {
-            //        Current.Next.Next = newNode;
-            //        newNode.Next = Current.Next.Next;
-            //    }
-            //}
-            Node whereToAddAfter = Find(existingNode);
-            Current.Next = newNode;
-            newNode.Next = Current.Next.Next;
+            while (Current.Next != null)
+            {
+                if (Current.Next.Value == existingNode.Value)
+                {
+                    newNode.Next = Current.Next.Next;
+                    Current.Next = existingNode;
+                }
+
+                Current = Current.Next;
+            }
+
+            //Node whereToAddAfter = Find(existingNode);
+            //newNode.Next = Current.Next.Next;
+            //Current.Next = newNode;
         }
 
         // Find => returns a Node
@@ -138,5 +141,31 @@ namespace linkedList.Classes
             return null;
         }
 
+        public int FindKthFromLast(int k)
+        {
+            Current = Head;
+
+            // First instatiate a counter variable that will represent the number of nodes in LL
+            int counter = 0;
+
+            // Traverse the entire linked list to increment counter
+            while (Current.Next != null)
+            {
+                Current = Current.Next;
+                counter++;
+            }
+
+            // Need to reset my Current pointer to the Head of LL
+            Current = Head;
+
+            // Loop through the LL again while counter > k? or counter >= k?
+            while (counter > k)
+            {
+                Current = Current.Next;
+                counter--;
+            }
+
+            return Current.Value;
+        }
     }
 }

@@ -1,6 +1,6 @@
 using System;
 using Xunit;
-using linkedList.Classes;
+using LinkedList.Classes;
 
 namespace LinkedListTests
 {
