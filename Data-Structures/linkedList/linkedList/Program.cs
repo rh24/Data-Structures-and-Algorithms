@@ -1,7 +1,7 @@
 ﻿using System;
-using LinkedList.Classes;
+using LinkList.Classes;
 
-namespace LinkedList
+namespace LinkList
 {
     class Program
     {

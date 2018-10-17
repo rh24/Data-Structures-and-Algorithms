@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace LinkedList.Classes
+namespace LinkList.Classes
 {
     public class LList
     {
@@ -31,9 +29,10 @@ namespace LinkedList.Classes
         /// <param name="node"></param>
         public void Add(Node node)
         {
+            //Current = Head;
             node.Next = Head;
             Head = node;
-            Current = Head;
+            //Current = Head;
         }
 
         // we have to traverse the LL in order to print, so it's linear time. O(n).
@@ -141,31 +140,31 @@ namespace LinkedList.Classes
             return null;
         }
 
-        public int FindKthFromLast(int k)
-        {
-            Current = Head;
+        //public int FindKthFromLast(int k)
+        //{
+        //    Current = Head;
 
-            // First instatiate a counter variable that will represent the number of nodes in LL
-            int counter = 0;
+        //    // First instatiate a counter variable that will represent the number of nodes in LL
+        //    int counter = 0;
 
-            // Traverse the entire linked list to increment counter
-            while (Current.Next != null)
-            {
-                Current = Current.Next;
-                counter++;
-            }
+        //    // Traverse the entire linked list to increment counter
+        //    while (Current.Next != null)
+        //    {
+        //        Current = Current.Next;
+        //        counter++;
+        //    }
 
-            // Need to reset my Current pointer to the Head of LL
-            Current = Head;
+        //    // Need to reset my Current pointer to the Head of LL
+        //    Current = Head;
 
-            // Loop through the LL again while counter > k? or counter >= k?
-            while (counter > k)
-            {
-                Current = Current.Next;
-                counter--;
-            }
+        //    // Loop through the LL again while counter > k? or counter >= k?
+        //    while (counter > k)
+        //    {
+        //        Current = Current.Next;
+        //        counter--;
+        //    }
 
-            return Current.Value;
-        }
+        //    return Current.Value;
+        //}
     }
 }
