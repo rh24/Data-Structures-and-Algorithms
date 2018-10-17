@@ -31,17 +31,13 @@ namespace LinkedList
             }
 
             Console.WriteLine(ll.Find(node0).Value);
+
+
         }
 
-        static void FindKthElement(int k)
+        static void FindKthFromlast(int k)
         {
-            // whiteboard code here
-            int counter = 0;
-            // iterate through the LL to increment a counter
-            while (Current.Next != null)
-            {
-                counter++;
-            }
+            Console.WriteLine(FindKthFromLast(k));
         }
     }
 }
