@@ -9,6 +9,9 @@
     <Reference Include="linkedList">
       <HintPath>..\..\..\Data-Structures\linkedList\linkedList\bin\Debug\netcoreapp2.1\linkedList.dll</HintPath>
     </Reference>
+    <Reference Include="LLKth">
+      <HintPath>..\..\LLKth\LLKth\bin\Debug\netcoreapp2.1\LLKth.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
