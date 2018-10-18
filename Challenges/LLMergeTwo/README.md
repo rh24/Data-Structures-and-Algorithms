@@ -7,3 +7,5 @@ Space complexity: O(1)
 Time complexity: O(n)
 
 ## Whiteboard Solution
+
+![LLMerge](https://github.com/rh24/Data-Structures-and-Algorithms/blob/linked-list/assets/LLMerge.jpg)
