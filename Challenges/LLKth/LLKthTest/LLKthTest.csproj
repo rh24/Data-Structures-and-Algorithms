@@ -13,7 +13,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\linkedList\linkedList.csproj" />
+    <ProjectReference Include="..\LLKth\LLKth.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="linkedList">
+      <HintPath>..\..\..\Data-Structures\linkedList\linkedList\bin\Debug\netcoreapp2.1\linkedList.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
