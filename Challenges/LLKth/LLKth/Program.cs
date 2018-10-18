@@ -10,33 +10,23 @@ namespace LLKth
         static void Main(string[] args)
         {
             // Instantiate some Node objects
-            //Node node0 = new Node(0);
-            //Node node1 = new Node(1);
-            //Node node2 = new Node(2);
-            //Node node3 = new Node(3);
-            //Node node4 = new Node(4);
-
-
+            Node node4 = new Node(4);
             Node node1 = new Node(1);
             Node node2 = new Node(2);
             Node node3 = new Node(3);
             LList ll = new LList(node1);
 
             ll.Add(node2);
+            ll.Add(node4);
 
-            //  ll.Print();
-            //ll.Print();
-
-            //Console.WriteLine(ll.Find(node0).Value);
-            Console.WriteLine(FindKthFromLast(7, ll));
-            //Console.ReadLine();
+            Console.WriteLine(FindKthFromLast(2, ll));
         }
 
         public static dynamic FindKthFromLast(int k, LList ll)
         {
             //ll.Current = ll.Head;
 
-            if (k < 0) return "can't be negtive";
+            if (k < 0) return "can't be negative";
 
             // First instatiate a counter variable that will represent the number of nodes in LL
             int counter = 0;

@@ -7,8 +7,12 @@ namespace LLKthTest
 {
     public class UnitTest1
     {
-        [Fact]
-        public void TestKthFromLast()
+        [Theory]
+        [InlineData(0, 0)]
+        [InlineData("aren't that many nodes", 7)]
+        [InlineData("can't be negative", -2)]
+        [InlineData(3, 3)]
+        public void TestKthFromLast(object expected, int kth)
         {
             // Instantiate some Node objects
             Node node0 = new Node(0);
@@ -22,8 +26,11 @@ namespace LLKthTest
 
             ll.Add(node1);
             ll.Add(node2);
+            ll.Add(node3);
 
-            Assert.Equal(0, Program.FindKthFromLast(0, ll));
+            Assert.Equal(expected, Program.FindKthFromLast(kth, ll));
+            //Assert.Equal(expected, Program.FindKthFromLast(kth, ll));
+            //Assert.Equal(expected, Program.FindKthFromLast(kth, ll));
         }
     }
 }
