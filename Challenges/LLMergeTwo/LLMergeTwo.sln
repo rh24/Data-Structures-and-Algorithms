@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LLMergeTwo", "LLMergeTwo\LLMergeTwo.csproj", "{DB6E322B-80F3-41F1-973C-2A3864D6767D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLMergeTwo", "LLMergeTwo\LLMergeTwo.csproj", "{DB6E322B-80F3-41F1-973C-2A3864D6767D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestProject1", "XUnitTestProject1\XUnitTestProject1.csproj", "{A39B9521-8D5B-442F-82D6-BE89605C482D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LLMergeTwoTests", "XUnitTestProject1\LLMergeTwoTests.csproj", "{A39B9521-8D5B-442F-82D6-BE89605C482D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
