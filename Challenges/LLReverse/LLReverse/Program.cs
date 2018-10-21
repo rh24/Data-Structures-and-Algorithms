@@ -1,4 +1,5 @@
 ﻿using System;
+using LinkList.Classes;
 
 namespace LLReverse
 {
@@ -7,6 +8,11 @@ namespace LLReverse
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
+        }
+
+        static void ReverseLLInPlace(LList ll)
+        {
+
         }
     }
 }
