@@ -10,7 +10,7 @@ namespace LLReverse
             Console.WriteLine("Hello World!");
         }
 
-        static void ReverseLLInPlace(LList ll)
+        static LList ReverseLLInPlace(LList ll)
         {
             Node a;
             Node b;
