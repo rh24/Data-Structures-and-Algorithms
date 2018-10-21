@@ -9,58 +9,78 @@ namespace LLMergeTwoTests
     public class UnitTest1
     {
         // Set up LL1
-        public static LList l1 = new LList(new Node("lastNode1"));
+        public static LList ll = new LList(new Node(0));
 
         // Set up LL2
-        public static LList l2 = new LList(new Node("lastNode2"));
+        public static LList ll2 = new LList(new Node(1));
 
         /// <summary>
-        /// Test lists of equal number of nodes. Test that last node value is "lastNode2."
+        /// Test merging lists with unequal number of nodes. Test that last node value is 0.
+        /// 4 -->
+        /// 3 -->
+        /// 2 -->
+        /// 1 -->
+        /// 0 --> NULL
         /// </summary>
         [Fact]
-        public void Test1()
+        public void TestListsOfDifferentLengths()
         {
-            Node node0 = new Node("third");
-            Node node1 = new Node("world");
-            Node node2 = new Node("hello");
-            Node node4 = new Node("goodnight");
-            Node node5 = new Node("and stars");
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
+            Node node4 = new Node(4);
 
-            l1.Add(node0);
-            l1.Add(node2);
+            ll.Add(node2);
+            ll.Add(node4);
 
-            l2.Add(node5);
-            l2.Add(node4);
+            ll2.Add(node3);
 
-            LList mergedList = MergeTwoLL(l1, l2);
+            LList mergedList = MergeTwoLL(ll, ll2);
 
             Node lastNode = FindLast(mergedList);
-            string lastStringValue = lastNode.Value.ToString();
-            Assert.Equal("lastNode2", lastStringValue);
+            int lastNodeValue = (int)lastNode.Value;
+            Assert.Equal(0, lastNodeValue);
         }
 
+
+        /// <summary>
+        /// Test merging lists with equal number of nodes.
+        /// 3 -->
+        /// 2 -->
+        /// 0 --> NULL
+        /// 1 -->
+        /// </summary>
         [Fact]
-        public void TestValueOfListsOfDifferentLength()
+        public void MergeListsOfSameLength()
         {
-            Node node0 = new Node("third");
-            Node node1 = new Node("world");
-            Node node2 = new Node("hello");
-            Node node3 = new Node("moon");
-            Node node4 = new Node("goodnight");
-            Node node5 = new Node("and stars");
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
 
-            l1.Add(node0);
-            l1.Add(node2);
-            l1.Add(node3);
+            ll.Add(node2);
 
-            l2.Add(node5);
-            l2.Add(node4);
+            ll2.Add(node3);
 
-            LList mergedList = MergeTwoLL(l1, l2);
+            LList mergedList = MergeTwoLL(ll, ll2);
+            Assert.Equal(1, FindKthFromLast(0, mergedList));
+        }
 
-            Node lastNode = FindLast(mergedList);
-            string lastStringValue = lastNode.Value.ToString();
-            Assert.Equal("lastNode2", lastStringValue);
+        /// <summary>
+        /// 2 -->
+        /// 3 -->
+        /// 0 -->
+        /// 1 --> NULL
+        /// </summary>
+        [Fact]
+        public void FindKthForListsOfSameLength()
+        {
+            Node node2 = new Node(2);
+            Node node3 = new Node(3);
+
+            ll.Add(node2);
+
+            ll2.Add(node3);
+
+            LList mergedList = MergeTwoLL(ll, ll2);
+            Assert.Equal(0, FindKthFromLast(1, mergedList));
         }
     }
 }
