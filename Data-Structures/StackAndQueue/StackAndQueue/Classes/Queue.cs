@@ -29,7 +29,7 @@ namespace StackAndQueue.Classes
 
         // Remove node from first in queue
         // Set your pointers equal to null so the unused objects can be GC'ed.
-        public Node Dequeue(Node node)
+        public Node Dequeue()
         {
             Node pointer = Peek();
             Front = Front.Next;

@@ -49,5 +49,37 @@ namespace StackAndQueueTests
             object peekTopNodeValue = stack.Peek().Value;
             Assert.Equal(3, peekTopNodeValue);
         }
+
+        /// <summary>
+        /// Test node enqueues properly. Queues are FIFO data structures. The first queued node will be the queue's Front node. The current queue's Front node's value should be 0.
+        /// </summary>
+        [Fact]
+        public void TestPeekAndEnqueue()
+        {
+            queue.Enqueue(new Node(1));
+
+            object peekFrontNodeValue = queue.Peek().Value;
+            Assert.Equal(0, peekFrontNodeValue);
+
+            object rearNodeValue = queue.Rear.Value;
+            Assert.Equal(1, rearNodeValue);
+        }
+
+        /// <summary>
+        /// Test node dequeues propery. When a node is dequeued, the Front node is the first one to go.
+        /// </summary>
+        [Fact]
+        public void TestDequeue()
+        {
+            queue.Enqueue(new Node(1));
+            queue.Enqueue(new Node(2));
+
+            object peekCurrentFrontNodeValue = queue.Peek().Value;
+            Assert.Equal(0, peekCurrentFrontNodeValue);
+
+            object dequeuedNodeValue = queue.Dequeue().Value;
+            bool firstInFirstOut = peekCurrentFrontNodeValue == dequeuedNodeValue;
+            Assert.True(firstInFirstOut);
+        }
     }
 }
