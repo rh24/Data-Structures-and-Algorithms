@@ -16,7 +16,14 @@ namespace StackAndQueue.Classes
         public Node Peek()
         {
             // implement a try-catch here to prevent null exception
-            return Top;
+            try
+            {
+                return Top;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         public Node Pop()
