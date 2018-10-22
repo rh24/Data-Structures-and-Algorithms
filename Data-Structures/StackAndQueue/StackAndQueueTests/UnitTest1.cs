@@ -19,5 +19,21 @@ namespace StackAndQueueTests
             object currentTopNodeValue = stack.Peek().Value;
             Assert.Equal(1, currentTopNodeValue);
         }
+
+        /// <summary>
+        /// Test popping a node off the stack. Stacks operate as LIFO data structures. The last pushed node's value is 2. This means that the first popped off node's value will be 2.
+        /// </summary>
+        [Fact]
+        public void PopNodeOffStack()
+        {
+            stack.Push(new Node(1));
+            stack.Push(new Node(2));
+
+            object poppedOffValue = stack.Pop().Value;
+            Assert.Equal(2, poppedOffValue);
+
+            object secondPoppedOffValue = stack.Pop().Value;
+            Assert.Equal(1, secondPoppedOffValue);
+        }
     }
 }
