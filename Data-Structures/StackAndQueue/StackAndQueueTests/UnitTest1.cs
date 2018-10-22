@@ -35,5 +35,19 @@ namespace StackAndQueueTests
             object secondPoppedOffValue = stack.Pop().Value;
             Assert.Equal(1, secondPoppedOffValue);
         }
+
+        /// <summary>
+        /// Test peeking at Top node of stack. The Top node should be the last node pushed onto the stack.
+        /// </summary>
+        [Fact]
+        public void PeekAtTopNodeOfStack()
+        {
+            stack.Push(new Node(1));
+            stack.Push(new Node(2));
+            stack.Push(new Node(3));
+
+            object peekTopNodeValue = stack.Peek().Value;
+            Assert.Equal(3, peekTopNodeValue);
+        }
     }
 }
