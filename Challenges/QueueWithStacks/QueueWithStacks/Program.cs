@@ -1,4 +1,6 @@
 ﻿using System;
+using StackAndQueue.Classes;
+using static QueueWithStacks.CustomQueue;
 
 namespace QueueWithStacks
 {
@@ -6,7 +8,7 @@ namespace QueueWithStacks
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
         }
     }
 }
