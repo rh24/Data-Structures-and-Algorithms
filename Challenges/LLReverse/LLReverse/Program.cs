@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace LLReverse
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -34,7 +34,7 @@ namespace LLReverse
             //reverseTwo.Print();
         }
 
-        static LList ReverseLLInPlace(LList ll)
+        public static LList ReverseLLInPlace(LList ll)
         {
             ll.Current = ll.Head;
 

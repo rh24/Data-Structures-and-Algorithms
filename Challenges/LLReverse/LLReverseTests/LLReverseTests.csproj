@@ -12,4 +12,17 @@
     <PackageReference Include="xunit.runner.visualstudio" Version="2.3.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\LLReverse\LLReverse.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="linkedList">
+      <HintPath>..\..\..\Data-Structures\linkedList\linkedList\bin\Debug\netcoreapp2.1\linkedList.dll</HintPath>
+    </Reference>
+    <Reference Include="LLKth">
+      <HintPath>..\..\LLKth\LLKth\bin\Debug\netcoreapp2.1\LLKth.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
