@@ -6,7 +6,15 @@ Since stacks are a LIFO data structure, one stack must hold all the nodes. When 
 
 ## Big O
 
+>`Enqueue(value)`
 
+* Space complexity: O(n)
+* Time complexity: O(1)
+
+>`Dequeue()`
+
+* Space complexity: O(1)
+* Time complexity: O(n)
 
 ## Whiteboard Solution
 
