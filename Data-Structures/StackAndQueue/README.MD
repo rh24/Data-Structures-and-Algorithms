@@ -12,3 +12,9 @@ The methods that have been implemented in the Stack class are `Peek()`, `Push()`
 `Push()` will add a node to the top of the stack.
 
 ## Queue
+
+`Peek()` will preview the `Front` property of the queue.
+
+`Enqueue(Node node)` will add a node to the end of the queue.
+
+`Dequeue()` will remove a node from the Front of the queue and return it.
