@@ -18,21 +18,30 @@ namespace QueueWithStacks
             StackTwo = new Stack(new Node(0));
         }
 
+        /// <summary>
+        /// This method mimics the Enqueue method of a Queue by pushing a node onto StackTwo. The pushed node on the stack is the next one that has "queued."
+        /// </summary>
+        /// <param name="value"></param>
         public void Enqueue(Node value)
         {
             StackTwo.Push(value);
         }
 
+        /// <summary>
+        /// This method mimics the dequeue action of a Queue data structure by popping nodes off my StackTwo onto my StackOne until the last one pushed onto StackOne is the "dequeued" node I am looking to return.
+        /// </summary>
+        /// <returns>Dequeued node that was "first one" in StackTwo</returns>
         public Node Dequeue()
         {
             Node dq;
 
-            // Change algorithm to pop until the next is not null because Stack must be instantiated with a node that is technically not a part of our dataset.
+            // Change algorithm to pop until the next is not null because Stack must be instantiated with a node that is technically not a part of our dataset. All that's left in StackTwo will be the node with .Value == 0 that StackTwo was originally instantiated with.
             while (StackTwo.Peek().Next != null)
             {
                 StackOne.Push(StackTwo.Pop());
             }
 
+            // The node that we want that is "first one in the queue" is the last one that was pushed onto Stackone.
             dq = StackOne.Pop();
 
             while (StackOne.Peek().Next != null)
@@ -43,6 +52,10 @@ namespace QueueWithStacks
             return dq;
         }
 
+        /// <summary>
+        /// Counts the nodes in StackOne
+        /// </summary>
+        /// <returns>integer size of StackOne</returns>
         public int ReturnSizeOfStackOne()
         {
             int count = 0;
@@ -57,6 +70,10 @@ namespace QueueWithStacks
             return count;
         }
 
+        /// <summary>
+        /// Counts the nodes in StackTwo
+        /// </summary>
+        /// <returns>integer size of StackTwo</returns>
         public int ReturnSizeOfStackTwo()
         {
             int count = 0;
