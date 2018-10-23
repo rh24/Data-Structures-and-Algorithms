@@ -42,5 +42,33 @@ namespace QueueWithStacks
 
             return dq;
         }
+
+        public int ReturnSizeOfStackOne()
+        {
+            int count = 0;
+            Node temp = StackOne.Peek().Next;
+
+            while (temp != null)
+            {
+                count++;
+                temp = temp.Next;
+            }
+
+            return count;
+        }
+
+        public int ReturnSizeOfStackTwo()
+        {
+            int count = 0;
+            Node temp = StackTwo.Peek().Next;
+
+            while (temp != null)
+            {
+                count++;
+                temp = temp.Next;
+            }
+
+            return count;
+        }
     }
 }
