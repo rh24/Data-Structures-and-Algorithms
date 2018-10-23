@@ -43,6 +43,9 @@ namespace QueueWithStacksTests
             Assert.Equal(4, newSizeOfStackTwo);
         }
 
+        /// <summary>
+        /// Test the Dequeue method for the CustomQueue class. Add nodes to set up the custom queue instance. Dequeue and test original size vs. new size. Check that the first dequeued node was the first to be added, and so on.
+        /// </summary>
         [Fact]
         public void TestDequeue()
         {
