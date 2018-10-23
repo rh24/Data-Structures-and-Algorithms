@@ -7,7 +7,9 @@ namespace FIFOAnimalShelter
 {
     public class AnimalShelter
     {
-        public Queue Cats { get; set; }
-        public Queue Dogs { get; set; }
+        public Animal CatsAndDogs { get; set; }
+
+        // if no preference, find the longest waiting animal
+        // if dog, but first node.Value is a cat, save first cat in a temp
     }
 }
