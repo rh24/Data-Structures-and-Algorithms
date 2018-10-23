@@ -1,13 +1,22 @@
 using System;
 using Xunit;
-using
+using StackAndQueue.Classes;
+using QueueWithStacks;
 
 namespace QueueWithStacksTests
 {
     public class UnitTest1
     {
+        /// <summary>
+        /// OUTPUT:
+        /// 4 (Fourth)
+        /// 3 (Third "Enqueued" node)
+        /// 2 (Second "Enqueued" node)
+        /// 1 (First "Enqueued" node)
+        /// 0 (The first instantiated default node for the StackTwo property)
+        /// </summary>
         [Fact]
-        public void Test1()
+        public void TestEnqueue()
         {
 
             Node node1 = new Node(1);
@@ -17,27 +26,22 @@ namespace QueueWithStacksTests
             Node node5 = new Node(5);
             Node node6 = new Node(6);
 
-            CustomQueue queue = QueueWithStacks();
+            CustomQueue queue = Program.QueueWithStacks();
 
             queue.Enqueue(node1);
             queue.Enqueue(node2);
             queue.Enqueue(node3);
 
             // StackTwo holds the enqueued nodes
-            Node temp = queue.StackTwo.Peek();
+            int sizeOfStackTwo = queue.ReturnSizeOfStackTwo();
+            int sizeOfStackOne = queue.ReturnSizeOfStackOne();
 
-            while (temp != null)
-            {
-                Console.WriteLine(temp.Value);
-                temp = temp.Next;
-            }
+            Assert.Equal(3, sizeOfStackTwo);
+            Assert.Equal(0, sizeOfStackOne);
 
-            // OUTPUT:
-            // 3 (Third "Enqueued" node)
-            // 2 (Second "Enqueued" node)
-            // 1 (First "Enqueued" node)
-            // 0 (The first instantiated default node for the StackTwo property)
-
+            queue.Enqueue(node4);
+            int newSizeOfStackTwo = queue.ReturnSizeOfStackTwo();
+            Assert.Equal(4, newSizeOfStackTwo);
         }
     }
 }

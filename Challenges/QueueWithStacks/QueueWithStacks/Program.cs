@@ -4,7 +4,7 @@ using static QueueWithStacks.CustomQueue;
 
 namespace QueueWithStacks
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -39,7 +39,7 @@ namespace QueueWithStacks
             // 0 (The first instantiated default node for the StackTwo property)
         }
 
-        static CustomQueue QueueWithStacks()
+        public static CustomQueue QueueWithStacks()
         {
             return new CustomQueue();
         }
