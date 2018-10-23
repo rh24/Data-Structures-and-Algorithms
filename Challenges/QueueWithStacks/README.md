@@ -8,7 +8,7 @@ Since stacks are a LIFO data structure, one stack must hold all the nodes while 
 
 >`Enqueue(value)`
 
-* Space complexity: O(n)
+* Space complexity: O(1) because we're not allocating new memory. We are only adjusting pointers of existing objects in the heap.
 * Time complexity: O(1)
 
 >`Dequeue()`
