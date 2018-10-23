@@ -12,6 +12,9 @@ namespace QueueWithStacks
         // StackTwo will hold the nodes like a "queue"
         public Stack StackTwo { get; set; }
 
+        /// <summary>
+        /// Custom constructor instantiates 2 stacks. Stack must be instantiated with a node.
+        /// </summary>
         public CustomQueue()
         {
             StackOne = new Stack(new Node(0));
