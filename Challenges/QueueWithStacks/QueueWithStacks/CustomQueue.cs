@@ -1,10 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Text;
+using StackAndQueue.Classes;
 
 namespace QueueWithStacks
 {
-    class CustomQueue
+    public class CustomQueue
     {
+        public Stack StackOne { get; set; }
+        public Stack StackTwo { get; set; }
+
+        public CustomQueue()
+        {
+            StackOne = new Stack(new Node(0));
+            StackTwo = new Stack(new Node(0));
+        }
     }
 }

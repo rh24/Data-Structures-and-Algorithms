@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Reference Include="linkedList">
+      <HintPath>..\..\..\Data-Structures\linkedList\linkedList\bin\Debug\netcoreapp2.1\linkedList.dll</HintPath>
+    </Reference>
     <Reference Include="StackAndQueue">
       <HintPath>..\..\..\Data-Structures\StackAndQueue\StackAndQueue\bin\Debug\netcoreapp2.1\StackAndQueue.dll</HintPath>
     </Reference>
