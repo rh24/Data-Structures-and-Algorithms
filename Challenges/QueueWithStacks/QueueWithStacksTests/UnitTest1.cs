@@ -14,7 +14,7 @@ namespace QueueWithStacksTests
         /// 3 (Third "Enqueued" node)
         /// 2 (Second "Enqueued" node)
         /// 1 (First "Enqueued" node)
-        /// 0 (The first instantiated default node for the StackTwo property)
+        /// 0 (The first instantiated default node for the Output property)
         /// </summary>
         [Fact]
         public void TestEnqueue()
@@ -31,7 +31,7 @@ namespace QueueWithStacksTests
             queue.Enqueue(node2);
             queue.Enqueue(node3);
 
-            // StackTwo holds the enqueued nodes
+            // Output holds the enqueued nodes
             int sizeOfStackTwo = queue.ReturnSizeOfStackTwo();
             int sizeOfStackOne = queue.ReturnSizeOfStackOne();
 

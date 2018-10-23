@@ -21,8 +21,8 @@ namespace QueueWithStacks
             queue.Enqueue(node2);
             queue.Enqueue(node3);
 
-            // StackTwo holds the enqueued nodes
-            Node temp = queue.StackTwo.Peek();
+            // Output holds the enqueued nodes
+            Node temp = queue.Output.Peek();
 
             while (temp != null)
             {
@@ -30,13 +30,13 @@ namespace QueueWithStacks
                 temp = temp.Next;
             }
 
-            Console.WriteLine($"StackOne size: {queue.ReturnSizeOfStackOne()} // StackTwo size: {queue.ReturnSizeOfStackTwo()}");
+            Console.WriteLine($"Input size: {queue.ReturnSizeOfStackOne()} // Output size: {queue.ReturnSizeOfStackTwo()}");
 
             // OUTPUT:
             // 3 (Third "Enqueued" node)
             // 2 (Second "Enqueued" node)
             // 1 (First "Enqueued" node)
-            // 0 (The first instantiated default node for the StackTwo property)
+            // 0 (The first instantiated default node for the Output property)
         }
 
         public static CustomQueue QueueWithStacks()
