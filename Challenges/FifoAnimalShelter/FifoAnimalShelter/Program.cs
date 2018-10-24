@@ -23,7 +23,7 @@ namespace FIFOAnimalShelter
 
             Console.WriteLine(Environment.NewLine);
 
-            shelter.Dequeue("cat");
+            Console.WriteLine($"Dequeue {shelter.Dequeue("cat").GetType()}");
             Console.WriteLine($"My first animal is now {shelter.Front.Name}. It is the first in the shelter now: {shelter.Front.FirstInQueue}.");
 
             Console.WriteLine(Environment.NewLine);

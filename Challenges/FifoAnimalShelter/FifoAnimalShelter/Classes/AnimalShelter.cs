@@ -42,17 +42,22 @@ namespace FIFOAnimalShelter
             {
                 while (pointer != null)
                 {
-                    if (pointer.GetType().ToString().ToLower() == pref.ToLower() && pointer.FirstOfKind == true)
+                    if (pointer.GetType().ToString().ToLower().Contains(pref.ToLower()) && pointer.FirstOfKind == true)
                     {
                         Animal temp = pointer.Next;
-                        while (temp.GetType().ToString().ToLower() != pref.ToLower())
+                        while (temp != null && !temp.GetType().ToString().ToLower().Contains(pref.ToLower()))
                         {
                             temp = temp.Next;
                         }
 
                         if (temp != null) temp.FirstOfKind = true;
+
+                        break;
                     }
 
+                    //Rear.Next = pointer;
+                    //Rear = pointer;
+                    //Front = pointer.Next;
                     pointer = pointer.Next;
                 }
 
