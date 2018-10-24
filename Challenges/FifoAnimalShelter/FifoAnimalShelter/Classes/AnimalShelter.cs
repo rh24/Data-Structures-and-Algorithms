@@ -7,9 +7,16 @@ namespace FIFOAnimalShelter
 {
     public class AnimalShelter
     {
+        /// <summary>
+        /// Properties that mimic a Queue, which is a FIFO data structure
+        /// </summary>
         public Animal Front { get; set; }
         public Animal Rear { get; set; }
 
+        /// <summary>
+        ///  Constructor requires an Animal object. Set the first animal in the shelter as both first in queue and first of its kind.
+        /// </summary>
+        /// <param name="catOrDog"></param>
         public AnimalShelter(Animal catOrDog)
         {
             Front = catOrDog;
@@ -19,6 +26,11 @@ namespace FIFOAnimalShelter
             catOrDog.FirstOfKind = true;
         }
 
+        /// <summary>
+        /// Add an animal object to the Rear of the queue. Check if its of type Cat or Dog.
+        /// </summary>
+        /// <param name="animal">object that derives from Animal class</param>
+        /// <returns>A string that signals whether enqueue was successful</returns>
         public string Enqueue(Animal animal)
         {
             string successMessage = "Sorry, we only house cats and dogs.";
@@ -34,6 +46,11 @@ namespace FIFOAnimalShelter
             return successMessage;
         }
 
+        /// <summary>
+        /// This method dequeues the first Cat or Dog based on the preference paramter. If no preference is provided, the longest waiting Animal object will be returned.
+        /// </summary>
+        /// <param name="pref">string that is "cat" or "dog". Defaults to null</param>
+        /// <returns></returns>
         public Animal Dequeue(string pref = null)
         {
             Animal pointer = Front;
@@ -83,6 +100,9 @@ namespace FIFOAnimalShelter
             }
         }
 
+        /// <summary>
+        /// This method is to print all my animals in the shelter to the console so that I can see what's in my queue.
+        /// </summary>
         public void PrintAllAnimalsInShelter()
         {
             Animal pointer = Front;

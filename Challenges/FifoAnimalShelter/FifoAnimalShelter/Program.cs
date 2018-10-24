@@ -10,7 +10,7 @@ namespace FIFOAnimalShelter
             Cat meow = new Cat("Meow");
             Dog scout = new Dog("Scout");
             Cat waffles = new Cat("Waffles");
-            AnimalShelter shelter = new AnimalShelter(meow);
+            AnimalShelter shelter = FIFOAnimalShelter();
 
             Console.WriteLine($"****** Welcome to the Animal Shelter! ********");
             Console.WriteLine(shelter.Enqueue(meow));
@@ -31,6 +31,12 @@ namespace FIFOAnimalShelter
             shelter.Enqueue(waffles);
 
             shelter.PrintAllAnimalsInShelter();
+        }
+
+        static AnimalShelter FIFOAnimalShelter()
+        {
+            Cat kitty = new Cat("Kitty");
+            return new AnimalShelter(kitty);
         }
     }
 }
