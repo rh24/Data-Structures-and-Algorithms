@@ -3,14 +3,18 @@ using FIFOAnimalShelter.Classes;
 
 namespace FIFOAnimalShelter
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
             Cat meow = new Cat("Meow");
             Dog scout = new Dog("Scout");
             Cat waffles = new Cat("Waffles");
-            AnimalShelter shelter = FIFOAnimalShelter();
+            AnimalShelter shelter = FifoAnimalShelter();
+
+            Console.WriteLine("This is the animal that the shelter was instantiated with:");
+            shelter.PrintAllAnimalsInShelterAndCount();
+            Console.WriteLine(Environment.NewLine);
 
             Console.WriteLine($"****** Welcome to the Animal Shelter! ********");
             Console.WriteLine(shelter.Enqueue(meow));
@@ -30,10 +34,14 @@ namespace FIFOAnimalShelter
 
             shelter.Enqueue(waffles);
 
-            shelter.PrintAllAnimalsInShelter();
+            shelter.PrintAllAnimalsInShelterAndCount();
         }
 
-        static AnimalShelter FIFOAnimalShelter()
+        /// <summary>
+        /// Creates the animal shelter and adds a Cat object.
+        /// </summary>
+        /// <returns>AnimalShelter object</returns>
+        public static AnimalShelter FifoAnimalShelter()
         {
             Cat kitty = new Cat("Kitty");
             return new AnimalShelter(kitty);

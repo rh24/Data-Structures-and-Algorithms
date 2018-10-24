@@ -33,11 +33,17 @@ namespace FIFOAnimalShelter
         /// <returns>A string that signals whether enqueue was successful</returns>
         public string Enqueue(Animal animal)
         {
+            Animal pointer = Front;
             string successMessage = "Sorry, we only house cats and dogs.";
 
             if (animal is Cat || animal is Dog)
             {
-                if (Front == Rear && animal.GetType() != Front.GetType()) animal.FirstOfKind = true;
+                while (pointer != null)
+                {
+                    if (pointer.GetType() != animal.GetType()) animal.FirstOfKind = true;
+                    pointer = pointer.Next;
+                }
+
                 Rear.Next = animal;
                 Rear = animal;
                 successMessage = $"{animal.GetType()} successfully sheltered!";
@@ -103,15 +109,19 @@ namespace FIFOAnimalShelter
         /// <summary>
         /// This method is to print all my animals in the shelter to the console so that I can see what's in my queue.
         /// </summary>
-        public void PrintAllAnimalsInShelter()
+        public int PrintAllAnimalsInShelterAndCount()
         {
             Animal pointer = Front;
+            int count = 0;
 
             while (pointer != null)
             {
                 Console.WriteLine($"Type: {pointer.GetType()}. Name: {pointer.Name}. First In Queue: {pointer.FirstInQueue}. First of Kind: {pointer.FirstOfKind}");
                 pointer = pointer.Next;
+                count++;
             }
+
+            return count;
         }
     }
 }
