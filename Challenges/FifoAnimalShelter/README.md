@@ -20,3 +20,4 @@ The approach I took has an abstract parent Animal class and two derived concrete
 
 ## Whiteboard Solution
 
+![FIFOAnimalShelter](https://github.com/rh24/Data-Structures-and-Algorithms/blob/fifo-animal-shelter/assets/FIFOAnimalShelter.jpeg)
