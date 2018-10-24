@@ -55,12 +55,14 @@ namespace FIFOAnimalShelter
                         break;
                     }
 
-                    //Rear.Next = pointer;
-                    //Rear = pointer;
-                    //Front = pointer.Next;
+                    Rear.Next = pointer;
+                    Rear = pointer;
                     pointer = pointer.Next;
                 }
 
+                Front = pointer.Next;
+                Front.FirstInQueue = true;
+                pointer.Next = null;
                 return pointer;
             }
             else
