@@ -10,5 +10,10 @@ namespace FIFOAnimalShelter.Classes
         public override bool FirstOfKind { get; set; } = false;
         public override Animal Next { get; set; }
         public override bool FirstInQueue { get; set; } = false;
+
+        public Cat(string name)
+        {
+            Name = name;
+        }
     }
 }

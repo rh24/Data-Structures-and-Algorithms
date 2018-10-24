@@ -19,9 +19,6 @@ namespace FIFOAnimalShelter
             catOrDog.FirstOfKind = true;
         }
 
-        // if no preference, find the longest waiting animal
-        // if dog, but first node.Value is a cat, save first cat in a temp
-
         public string Enqueue(Animal animal)
         {
             string successMessage = "Sorry, we only house cats and dogs.";
@@ -67,9 +64,9 @@ namespace FIFOAnimalShelter
                 {
                     if (pointer.FirstInQueue == true)
                     {
-                        Animal temp = pointer.Next;
                         Front = pointer.Next;
                         Front.FirstInQueue = true;
+                        pointer.Next = null;
                         return pointer;
                     }
                 }
