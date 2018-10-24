@@ -75,5 +75,16 @@ namespace FIFOAnimalShelter
                 return pointer;
             }
         }
+
+        public void PrintAllAnimalsInShelter()
+        {
+            Animal pointer = Front;
+
+            while (pointer != null)
+            {
+                Console.WriteLine($"Type: {pointer.GetType()}. Name: {pointer.Name}. First In Queue: {pointer.FirstInQueue}. First of Kind: {pointer.FirstOfKind}");
+                pointer = pointer.Next;
+            }
+        }
     }
 }
