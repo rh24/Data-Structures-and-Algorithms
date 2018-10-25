@@ -7,11 +7,12 @@ namespace StackAndQueue.Classes
     public class Stack
     {
         public Node Top { get; set; }
-        public
+        public int Size { get; set; } = 0;
 
         public Stack(Node node)
         {
             Top = node;
+            Size++;
         }
 
         public Node Peek()
@@ -39,6 +40,7 @@ namespace StackAndQueue.Classes
         {
             node.Next = Top;
             Top = node;
+            Size++;
         }
     }
 }
