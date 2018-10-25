@@ -15,3 +15,10 @@ Here, are some invalid strings that should output `false`:
 > "{{}]"
 
 ## Big O
+
+Time complexity: O(n)
+Space complexity: O(n)
+
+## Whiteboard Solution
+
+![MultibracketValidation](https://github.com/rh24/Data-Structures-and-Algorithms/blob/multibracket-validation/assets/MultiBracketValidation.jpg)
