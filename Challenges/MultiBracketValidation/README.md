@@ -20,3 +20,5 @@ Time complexity: O(n)
 Space complexity: O(n)
 
 ## Whiteboard Solution
+
+![MultibracketValidation](https://github.com/rh24/Data-Structures-and-Algorithms/blob/multibracket-validation/assets/MultiBracketValidation.jpg)
