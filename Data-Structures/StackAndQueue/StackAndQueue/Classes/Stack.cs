@@ -12,7 +12,8 @@ namespace StackAndQueue.Classes
         public Stack(Node node)
         {
             Top = node;
-            Size++;
+            
+            if (node != null) Size++;
         }
 
         public Node Peek()
