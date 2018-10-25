@@ -28,17 +28,13 @@ namespace MultiBracketValidation
 
             for (int i = 0; i < input.Length; i++)
             {
-                string character = input[i].ToString();
-
-                if (character == "{" || character == "[" || character == "(")
+                if (input[i].ToString() == "{" || input[i].ToString() == "[" || input[i].ToString() == "(")
                 {
                     holdingStack.Push(new Node(input[i]));
                 }
                 else
                 {
-                    string ch = input[i].ToString();
-
-                    switch (ch)
+                    switch (input[i].ToString())
                     {
                         case "}":
                             if (holdingStack.Size == 0) return false;

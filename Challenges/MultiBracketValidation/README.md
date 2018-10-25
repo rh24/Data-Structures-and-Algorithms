@@ -6,6 +6,9 @@ Here, are some examples of valid strings that should output `true`:
 
 > "{{{aEO}}}[]"
 
+
+> "()a[]{e}((p\o))"
+
 > "()a[]{e}((p|o))"
 
 
