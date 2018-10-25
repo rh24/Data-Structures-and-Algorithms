@@ -5,13 +5,16 @@ Given a string, validate whether or not each opening bracket has a matching clos
 Here, are some examples of valid strings that should output `true`:
 
 > "{{{aEO}}}[]"
+
 > "()a[]{e}((p\o))"
 
 
 Here, are some invalid strings that should output `false`:
 
 > "}}{{"
+
 > "[(])"
+
 > "{{}]"
 
 ## Big O
