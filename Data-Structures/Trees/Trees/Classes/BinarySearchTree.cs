@@ -12,6 +12,13 @@ namespace Trees.Classes
             {
                 while (root != null)
                 {
+                    // you found a leaf!
+                    if (root.RightChild == null && root.LeftChild == null)
+                    {
+                        if ((int)root.Value < (int)newNode.Value) root.RightChild = newNode;
+                        else root.LeftChild = newNode;
+                    }
+
                     if ((int)newNode.Value > (int)root.LeftChild.Value)
                     {
                         root = root.RightChild;
@@ -22,13 +29,6 @@ namespace Trees.Classes
                     {
                         root = root.LeftChild;
                         Add(newNode, root);
-                    }
-
-                    // you found a leaf!
-                    if (root.RightChild == null && root.LeftChild == null)
-                    {
-                        if ((int)root.Value < (int)newNode.Value) root.RightChild = newNode;
-                        else root.LeftChild = newNode;
                     }
                 }
 
@@ -42,9 +42,9 @@ namespace Trees.Classes
 
         }
 
-        public Node Search(object val)
-        {
+        //public Node Search(object val)
+        //{
 
-        }
+        //}
     }
 }
