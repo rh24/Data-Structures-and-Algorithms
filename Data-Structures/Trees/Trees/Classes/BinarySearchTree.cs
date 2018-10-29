@@ -6,5 +6,14 @@ namespace Trees.Classes
 {
     public class BinarySearchTree
     {
+        public bool Add(Node newNode, Node existingNode)
+        {
+
+        }
+
+        public Node Search(object val)
+        {
+
+        }
     }
 }
