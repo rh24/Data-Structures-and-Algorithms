@@ -6,8 +6,13 @@ namespace Trees.Classes
 {
     public class Node
     {
-        public Node Value { get; set; }
-        public Node Left { get; set; }
-        public Node Right { get; set; }
+        public object Value { get; set; }
+        public Node LeftChild { get; set; }
+        public Node RightChild { get; set; }
+
+        public Node(object val)
+        {
+            Value = val;
+        }
     }
 }
