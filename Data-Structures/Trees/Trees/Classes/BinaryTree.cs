@@ -6,20 +6,26 @@ namespace Trees.Classes
 {
     public class BinaryTree
     {
-        // Depth-first traversals
+        public Node Root { get; set; }
 
+        public BinaryTree(Node root)
+        {
+            Root = root;
+        }
+
+        // Depth-first traversals
         /// <summary>
-        /// Pre-order: Root, Right, Left
+        /// Pre-order: Root, Left, Right
         /// Instantiate a new list when running the method, and pass into method as a parameter
         /// </summary>
-        /// <param name="root">Starting root node</param>
+        /// <param name="node">Starting node</param>
         /// <param name="nodes">Generic list of nodes for updating list recursively</param>
         /// <returns></returns>
-        public List<Node> PreOrder(Node root, List<Node> nodes)
+        public List<Node> PreOrder(Node node, List<Node> nodes)
         {
-            nodes.Add(root);
-            if (root.LeftChild != null) PreOrder(root.LeftChild, nodes);
-            if (root.RightChild != null) PreOrder(root.RightChild, nodes);
+            nodes.Add(node);
+            if (node.LeftChild != null) PreOrder(node.LeftChild, nodes);
+            if (node.RightChild != null) PreOrder(node.RightChild, nodes);
 
             return nodes;
         }
@@ -27,24 +33,23 @@ namespace Trees.Classes
         /// <summary>
         /// In order: Left, Root, Right
         /// </summary>
-        /// <param name="root">Starting root node</param>
+        /// <param name="node">Starting node</param>
         /// <param name="nodes">Generic list of nodes for updating list recursively</param>
-        /// <param name="nodes">Generic list of nodes for updating list recursively</param>
-        public List<Node> InOrder(Node root, List<Node> nodes)
+        public List<Node> InOrder(Node node, List<Node> nodes)
         {
-            if (root.LeftChild != null) InOrder(root.LeftChild, nodes);
-            nodes.Add(root);
-            if (root.RightChild != null) InOrder(root.RightChild, nodes);
+            if (node.LeftChild != null) InOrder(node.LeftChild, nodes);
+            nodes.Add(node);
+            if (node.RightChild != null) InOrder(node.RightChild, nodes);
 
             return nodes;
         }
 
         // Post-order: Left, Right, Root
-        public List<Node> PostOrder(Node root, List<Node> nodes)
+        public List<Node> PostOrder(Node node, List<Node> nodes)
         {
-            if (root.LeftChild != null) InOrder(root.LeftChild, nodes);
-            if (root.RightChild != null) InOrder(root.RightChild, nodes);
-            nodes.Add(root);
+            if (node.LeftChild != null) InOrder(node.LeftChild, nodes);
+            if (node.RightChild != null) InOrder(node.RightChild, nodes);
+            nodes.Add(node);
 
             return nodes;
         }

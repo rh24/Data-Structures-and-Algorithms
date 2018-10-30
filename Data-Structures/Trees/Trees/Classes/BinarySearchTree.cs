@@ -6,29 +6,34 @@ namespace Trees.Classes
 {
     public class BinarySearchTree
     {
-        public bool Add(Node newNode, Node root)
+        public Node Root { get; set; }
+
+        public BinarySearchTree(Node root)
         {
+            Root = root;
+        }
+
+        public bool Add(Node newNode)
+        {
+            Node current = Root;
             try
             {
-                while (root != null)
+                while (current != null)
                 {
                     // you found a leaf!
-                    if (root.RightChild == null && root.LeftChild == null)
+                    if (current.RightChild == null && current.LeftChild == null)
                     {
-                        if ((int)root.Value < (int)newNode.Value) root.RightChild = newNode;
-                        else root.LeftChild = newNode;
+                        if ((int)current.Value < (int)newNode.Value) current.RightChild = newNode;
+                        else current.LeftChild = newNode;
                     }
 
-                    if ((int)newNode.Value > (int)root.LeftChild.Value)
+                    if ((int)newNode.Value >= (int)current.LeftChild.Value)
                     {
-                        root = root.RightChild;
-                        Add(newNode, root);
+                        current = current.RightChild;
                     }
-
-                    if ((int)newNode.Value < (int)root.RightChild.Value)
+                    else if ((int)newNode.Value < (int)current.RightChild.Value)
                     {
-                        root = root.LeftChild;
-                        Add(newNode, root);
+                        current = current.LeftChild;
                     }
                 }
 
@@ -42,9 +47,25 @@ namespace Trees.Classes
 
         }
 
-        //public Node Search(object val)
-        //{
+        public Node Search(object val)
+        {
+            Node curr = Root;
 
-        //}
+            while (curr != null)
+            {
+                if ((int)curr.Value == (int)val) return curr;
+
+                if ((int)curr.Value < (int)val)
+                {
+                    curr = curr.RightChild;
+                }
+                else if ((int)curr.Value > (int)val)
+                {
+                    curr = curr.LeftChild;
+                }
+            }
+
+            return null;
+        }
     }
 }
