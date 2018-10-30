@@ -8,6 +8,10 @@ namespace Trees.Classes
     {
         public Node Root { get; set; }
 
+        /// <summary>
+        /// Class constructor
+        /// </summary>
+        /// <param name="root">Node to set Root property</param>
         public BinaryTree(Node root)
         {
             Root = root;
@@ -44,7 +48,11 @@ namespace Trees.Classes
             return nodes;
         }
 
-        // Post-order: Left, Right, Root
+        /// <summary>
+        /// Post-order: Left, Right, Root
+        /// </summary>
+        /// <param name="node">Starting node</param>
+        /// <param name="nodes">Generic list of nodes for updating list recursively</param>
         public List<Node> PostOrder(Node node, List<Node> nodes)
         {
             if (node.LeftChild != null) InOrder(node.LeftChild, nodes);
