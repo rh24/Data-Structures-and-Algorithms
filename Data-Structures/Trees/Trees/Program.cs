@@ -11,76 +11,40 @@ namespace Trees
             PrintPreOrder();
             PrintInOrder();
             PrintPostOrder();
-            PrintAddNodeToBST();
-            PrintBSTSearch();
+            PrintAddNodeToBSTAndSearch();
         }
 
-        static void PrintBSTSearch()
+        static void PrintAddNodeToBSTAndSearch()
         {
             List<Node> nodes = new List<Node>();
-            Node node0 = new Node(0);
-            BinarySearchTree bst = new BinarySearchTree(node0);
-            Node node1 = new Node(1);
-            Node node2 = new Node(2);
             Node node3 = new Node(3);
             Node node4 = new Node(4);
-            Node node5 = new Node(5);
-            node0.LeftChild = node1;
-            node0.RightChild = node5;
-            node1.LeftChild = node2;
-            node1.RightChild = node4;
-            node2.RightChild = node3;
-            /*
-                 0
-               /   \
-              1     5
-             / \
-            2   4
-             \
-              3
-         
-             */
-
-            Node foundNode = bst.Search(5);
-            Console.WriteLine($"I found the node! Its value is {foundNode.Value}");
-        }
-
-        static void PrintAddNodeToBST()
-        {
-            List<Node> nodes = new List<Node>();
-            Node node0 = new Node(0);
-            BinarySearchTree bst = new BinarySearchTree(node0);
+            BinarySearchTree bst = new BinarySearchTree(node4);
             Node node1 = new Node(1);
             Node node2 = new Node(2);
-            Node node3 = new Node(3);
-            Node node4 = new Node(4);
             Node node5 = new Node(5);
-            node0.LeftChild = node1;
-            node0.RightChild = node5;
-            node1.LeftChild = node2;
-            node1.RightChild = node4;
+            node4.LeftChild = node2;
+            node4.RightChild = node5;
+            node2.LeftChild = node1;
             node2.RightChild = node3;
+
             /* BEFORE ADD:
               
-                 0
+                 4
                /   \
-              1     5
+              2     5
              / \
-            2   4
-             \
-              3
+            1   3
          
              */
 
             /* AFTER ADD:
 
-                 0
+                 4
                /   \
-              1     5
+              2     5
              / \     \
-            2   4     7
-             \
-              3
+            1   3     7
 
              */
 
@@ -89,6 +53,8 @@ namespace Trees
             bst.Add(nodeToAdd);
 
             Console.WriteLine($"The node with value 7 should have been added as the RightChild of node 5." + Environment.NewLine + $"Root: {bst.Root.Value} \n\t root.RightChild: {bst.Root.RightChild.Value} \n\t root.RightChild.RightChild: {bst.Root.RightChild.RightChild.Value}");
+
+            Console.WriteLine($"I searched for the val of 5, and I found the node! Its value is {bst.Search(5).Value}");
         }
 
         static void PrintPreOrder()

@@ -37,6 +37,7 @@ namespace Trees.Classes
                     {
                         if ((int)current.Value < (int)newNode.Value) current.RightChild = newNode;
                         else current.LeftChild = newNode;
+                        break;
                     }
 
                     if ((int)newNode.Value >= (int)current.LeftChild.Value)
