@@ -13,3 +13,4 @@ Lastly, return the list of nodes. Print the list of nodes in a separate static m
 
 ## Whiteboard Solution
 
+![BreadthFirst](https://github.com/rh24/Data-Structures-and-Algorithms/blob/breadth-first/assets/BreadthFirst.jpg)
