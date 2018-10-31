@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using BreadthFirst.Classes;
+using BreadthFirstChallenge.Classes;
 
-namespace BreadthFirst
+namespace BreadthFirstChallenge
 {
     public class Program
     {
@@ -48,11 +48,11 @@ namespace BreadthFirst
         }
 
         /// <summary>
-        /// 
+        /// This method collects the nodes in breadth-first traversal order.
         /// </summary>
-        /// <param name="rootOfBinaryTree"></param>
-        /// <param name="nodesToPrint"></param>
-        /// <returns></returns>
+        /// <param name="rootOfBinaryTree">root of the binary tree</param>
+        /// <param name="nodesToPrint">List object that will later be iterated over to print the node values</param>
+        /// <returns>List of nodes</returns>
         public static List<Node> BreadthFirst(Node rootOfBinaryTree, List<Node> nodesToPrint)
         {
             Queue breadth = new Queue(rootOfBinaryTree);

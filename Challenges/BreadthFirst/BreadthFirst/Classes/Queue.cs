@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace BreadthFirst.Classes
+namespace BreadthFirstChallenge.Classes
 {
     public class Queue
     {
