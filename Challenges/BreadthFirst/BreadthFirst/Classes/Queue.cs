@@ -30,16 +30,15 @@ namespace BreadthFirst.Classes
 
         public bool Enqueue(Node node)
         {
-            try
+            if (node != null)
             {
                 Rear.Next = node;
                 Rear = Rear.Next;
-
                 return true;
             }
-            catch (Exception)
+            else
             {
-                throw;
+                return false;
             }
         }
 

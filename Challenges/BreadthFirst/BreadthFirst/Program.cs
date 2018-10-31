@@ -14,9 +14,28 @@ namespace BreadthFirst
             // Set up a BT
             Node node0 = new Node(0);
             Node node1 = new Node(1);
-            Node node2 = new Node(2);
+            Node node43 = new Node(43);
+            Node node7 = new Node(7);
+            Node node15 = new Node(15);
+            Node node21 = new Node(21);
             Node node3 = new Node(3);
-            Node node4 = new Node(4);
+
+            node0.LeftChild = node1;
+            node0.RightChild = node43;
+            node1.LeftChild = node7;
+            node1.RightChild = node15;
+            node43.LeftChild = node21;
+            node43.RightChild = node3;
+
+            /*
+            
+                    0
+                  /   \
+                 1     43
+                / \    /\
+               7  15  21 3
+
+             */
 
             // Reassign the List after traversing BT in breadth-first
             nodesToPrint = BreadthFirst(node0, nodesToPrint);
@@ -28,16 +47,23 @@ namespace BreadthFirst
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="rootOfBinaryTree"></param>
+        /// <param name="nodesToPrint"></param>
+        /// <returns></returns>
         public static List<Node> BreadthFirst(Node rootOfBinaryTree, List<Node> nodesToPrint)
         {
             Queue breadth = new Queue(rootOfBinaryTree);
 
-            while (breadth.Peek().RightChild != null || breadth.Peek().LeftChild != null)
+            while (breadth.Peek() != null)
             {
-                Node temp = breadth.Dequeue();
+                Node temp = breadth.Peek();
                 nodesToPrint.Add(temp);
                 breadth.Enqueue(temp.LeftChild);
                 breadth.Enqueue(temp.RightChild);
+                breadth.Dequeue();
             }
 
             return nodesToPrint;
