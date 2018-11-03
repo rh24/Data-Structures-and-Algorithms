@@ -27,9 +27,10 @@ namespace Trees.Classes
         /// <returns></returns>
         public List<Node> PreOrder(Node node, List<Node> nodes)
         {
+            if (node == null) return nodes;
             nodes.Add(node);
-            if (node.LeftChild != null) PreOrder(node.LeftChild, nodes);
-            if (node.RightChild != null) PreOrder(node.RightChild, nodes);
+            PreOrder(node.LeftChild, nodes);
+            PreOrder(node.RightChild, nodes);
 
             return nodes;
         }
@@ -41,9 +42,10 @@ namespace Trees.Classes
         /// <param name="nodes">Generic list of nodes for updating list recursively</param>
         public List<Node> InOrder(Node node, List<Node> nodes)
         {
-            if (node.LeftChild != null) InOrder(node.LeftChild, nodes);
+            if (node == null) return nodes;
+            InOrder(node.LeftChild, nodes);
             nodes.Add(node);
-            if (node.RightChild != null) InOrder(node.RightChild, nodes);
+            InOrder(node.RightChild, nodes);
 
             return nodes;
         }
@@ -55,8 +57,9 @@ namespace Trees.Classes
         /// <param name="nodes">Generic list of nodes for updating list recursively</param>
         public List<Node> PostOrder(Node node, List<Node> nodes)
         {
-            if (node.LeftChild != null) InOrder(node.LeftChild, nodes);
-            if (node.RightChild != null) InOrder(node.RightChild, nodes);
+            if (node == null) return nodes;
+            InOrder(node.LeftChild, nodes);
+            InOrder(node.RightChild, nodes);
             nodes.Add(node);
 
             return nodes;
