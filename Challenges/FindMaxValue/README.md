@@ -6,7 +6,7 @@ Given a binary tree, find the max value.
 
 > Space complexity: O(h)
 
-Recursively traversing the tree using Depth-first traversal, in order will result in space complexity being the height of the call stack, which will be the height of the tree.
+Recursively traversing the tree using Depth-first traversal, in order will result in space complexity being the height of the call stack, which will be the height of the tree. Although the whiteboard solution uses in order traversal, the implementation will use pre-order (Root, left, right).
 
 > Time complexity: O(n)
 
