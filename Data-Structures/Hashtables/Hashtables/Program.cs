@@ -9,6 +9,7 @@ namespace Hashtables
             Hashtable ht = new Hashtable();
             Console.WriteLine($"ht Buckets: {ht.HT.Length}");
             Console.WriteLine(ht.Add("wen", "turtle"));
+            Console.WriteLine(ht.Find("wen"));
         }
     }
 }
