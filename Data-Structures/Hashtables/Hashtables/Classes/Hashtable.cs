@@ -35,7 +35,7 @@ namespace Hashtables
             }
             catch (Exception)
             {
-                throw;
+                return false;
             }
         }
 
