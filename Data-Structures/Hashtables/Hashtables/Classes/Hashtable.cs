@@ -28,14 +28,8 @@ namespace Hashtables
                 int bucket = GetHash(key);
                 Node nodeToAdd = new Node(value) { Key = key };
 
-                if (HT[bucket] == null)
-                {
-                    HT[bucket] = new LinkedList(nodeToAdd);
-                }
-                else
-                {
-                    HT[bucket].Add(nodeToAdd);
-                }
+                if (HT[bucket] == null) HT[bucket] = new LinkedList(nodeToAdd);
+                else HT[bucket].Add(nodeToAdd);
 
                 return true;
             }
