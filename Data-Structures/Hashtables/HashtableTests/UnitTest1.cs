@@ -6,9 +6,12 @@ namespace HashtableTests
 {
     public class UnitTest1
     {
-        //Insertion
-        //Contains
-        //2 tests for collisions
+        /// <summary>
+        /// Test adding key-value pairs to the hashtable object.
+        /// </summary>
+        /// <param name="key">Lookup key</param>
+        /// <param name="value">Value to be stored</param>
+        /// <param name="expected">Expected return value depending on successful insertion</param>
         [Theory]
         [InlineData("wen", "turtle", true)]
         [InlineData(null, null, false)]
@@ -20,6 +23,9 @@ namespace HashtableTests
             Assert.Equal(expected, successfullyAdded);
         }
 
+        /// <summary>
+        /// Test whether added key-value pairs are contained in the hashtable through the Find(string value) method.
+        /// </summary>
         [Fact]
         public void TestContains()
         {
@@ -37,6 +43,9 @@ namespace HashtableTests
             Assert.Equal("mom", ht.Find("screen"));
         }
 
+        /// <summary>
+        /// First test for collision should prove that the next Node's Key property in the Bucket's LinkedList is the key of the first added key-value pair. 
+        /// </summary>
         [Fact]
         public void TestCollision1()
         {
@@ -52,6 +61,9 @@ namespace HashtableTests
             Assert.Equal("brainy", LL.Head.Next.Key);
         }
 
+        /// <summary>
+        /// Second test for collision should prove that the next Node's Key property in the Bucket's LinkedList is the key of the second added key-value pair. 
+        /// </summary>
         [Fact]
         public void TestCollision2()
         {
