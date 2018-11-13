@@ -25,7 +25,7 @@ namespace Hashtables
         {
             try
             {
-                int bucket = CalculateHashAndReturnIndex(key);
+                int bucket = GetHash(key);
                 Node nodeToAdd = new Node(value) { Key = key };
 
                 if (HT[bucket] == null)
@@ -52,7 +52,7 @@ namespace Hashtables
         /// <returns>Value of the key</returns>
         public object Find(string key)
         {
-            int bucket = CalculateHashAndReturnIndex(key);
+            int bucket = GetHash(key);
             Node current = HT[bucket].Head;
 
             while (current != null)
@@ -69,7 +69,7 @@ namespace Hashtables
         /// </summary>
         /// <param name="key">Look up string</param>
         /// <returns>Bucket index</returns>
-        public int CalculateHashAndReturnIndex(string key)
+        public int GetHash(string key)
         {
             byte[] bytes = Encoding.ASCII.GetBytes(key);
             int asciiVal = 0;
