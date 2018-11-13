@@ -36,5 +36,36 @@ namespace HashtableTests
             Assert.Equal("twist", ht.Find("cardamom"));
             Assert.Equal("mom", ht.Find("screen"));
         }
+
+        [Fact]
+        public void TestCollision1()
+        {
+            // Act
+            Hashtable ht = new Hashtable();
+
+            // Arrange
+            ht.Add("brainy", "pinky");
+            ht.Add("binary", "tree");
+            LinkedList LL = ht.HT[ht.GetHash("brainy")];
+
+            // Assert
+            Assert.Equal("brainy", LL.Head.Next.Key);
+        }
+
+        [Fact]
+        public void TestCollision2()
+        {
+            // Act
+            Hashtable ht = new Hashtable();
+
+            // Arrange
+            ht.Add("brainy", "pinky");
+            ht.Add("binary", "tree");
+            ht.Add("inarby", "mumble");
+            LinkedList LL = ht.HT[ht.GetHash("brainy")];
+
+            // Assert
+            Assert.Equal("binary", LL.Head.Next.Key);
+        }
     }
 }
