@@ -6,7 +6,9 @@ namespace Hashtables
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Hashtable ht = new Hashtable();
+            Console.WriteLine($"ht Buckets: {ht.HT.Length}");
+            Console.WriteLine(ht.Add("wen", "turtle"));
         }
     }
 }

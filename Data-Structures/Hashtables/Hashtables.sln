@@ -5,12 +5,7 @@ VisualStudioVersion = 15.0.28010.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hashtables", "Hashtables\Hashtables.csproj", "{D670D7A0-F368-4383-8A47-C2B22FC7992C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Hashtable", "Hashtable", "{CABBE7E3-97BC-49BA-A773-B7C6691F2222}"
-	ProjectSection(SolutionItems) = preProject
-		Hashtable.cs = Hashtable.cs
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HashtableTests", "HashtableTests\HashtableTests.csproj", "{BC0BF12C-AADB-4C6F-B849-7F02BB6878C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HashtableTests", "HashtableTests\HashtableTests.csproj", "{BC0BF12C-AADB-4C6F-B849-7F02BB6878C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
