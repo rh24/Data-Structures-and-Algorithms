@@ -1,4 +1,4 @@
-# Tree Intersections
+# Tree Intersection
 
 Given two binary trees as input, create a method called `TreeIntersections` that outputs common values from each binary tree.
 
