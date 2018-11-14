@@ -28,19 +28,25 @@ namespace TreeIntersection
               2     5
              / \
             1   3
+
+                 4
+               /   \
+              2     5
+             / \
+            1   3
          
              */
 
             Node bt2node3 = new Node(3);
             Node bt2node4 = new Node(4);
-            BinaryTree bt2 = new BinaryTree(node4);
+            BinaryTree bt2 = new BinaryTree(bt2node4);
             Node bt2node1 = new Node(1);
             Node bt2node2 = new Node(2);
             Node bt2node5 = new Node(5);
-            bt2node4.LeftChild = node2;
-            bt2node4.RightChild = node5;
-            bt2node2.LeftChild = node1;
-            bt2node2.RightChild = node3;
+            bt2node4.LeftChild = bt2node2;
+            bt2node4.RightChild = bt2node5;
+            bt2node2.LeftChild = bt2node1;
+            bt2node2.RightChild = bt2node3;
 
             List<object> overlapping = TreeIntersections(bt1, bt2);
 
@@ -59,20 +65,10 @@ namespace TreeIntersection
             ht1 = RecursivePreOrder(bt1.Root, ht1);
             ht2 = RecursivePreOrder(bt2.Root, ht2);
 
-            for (int i = 0; i < ht1.HT.Length; i++)
-            {
-                if (ht1.HT[i] != null)
-                {
-                    Hashtables.Node current = ht1.HT[i].Head;
+            Trees.Classes.Node current1 = bt1.Root;
 
-                    while (current != null)
-                    {
-                        object found = ht2.Find(current.Value.ToString());
-                        if (found != null) overlappingValues.Add(found);
-                        current = current.Next;
-                    }
-                }
-            }
+            RecursivePreOrder(current1.LeftChild, overlappingValues, ht1, ht2);
+            RecursivePreOrder(current1.RightChild, overlappingValues, ht1, ht2);
 
             return overlappingValues;
         }
@@ -84,6 +80,15 @@ namespace TreeIntersection
             RecursivePreOrder(node.LeftChild, ht);
             RecursivePreOrder(node.RightChild, ht);
             return ht;
+        }
+
+        public static List<object> RecursivePreOrder(Trees.Classes.Node node, List<object> returnList, Hashtable ht1, Hashtable ht2)
+        {
+            if (node == null) return returnList;
+            if (ht1.Find(node.Value.ToString()) != null && ht2.Find(node.Value.ToString()) != null) returnList.Add(node.Value);
+            RecursivePreOrder(node.LeftChild, returnList, ht1, ht2);
+            RecursivePreOrder(node.RightChild, returnList, ht1, ht2);
+            return returnList;
         }
     }
 }
