@@ -52,7 +52,7 @@ namespace TreeIntersection
 
             List<object> overlapping = TreeIntersections(bt1, bt2);
 
-            // This will print 2, 1, 5. but it should print 4, 2, 1, 5
+            // This will print 4, 2, 1, 5.
             foreach (var val in overlapping)
             {
                 Console.WriteLine(val);
