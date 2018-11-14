@@ -27,6 +27,7 @@ namespace TreeIntersection
             ht.Add((string)node.Value, node.Value);
             RecursivePreOrder(node.LeftChild, ht);
             RecursivePreOrder(node.RightChild, ht);
+            return ht;
         }
     }
 }
