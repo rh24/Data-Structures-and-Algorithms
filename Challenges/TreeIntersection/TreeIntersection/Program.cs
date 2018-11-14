@@ -21,23 +21,25 @@ namespace TreeIntersection
             node2.LeftChild = node1;
             node2.RightChild = node3;
 
-            /* BT1 and BT2 are identical. Therefore, every single one of its values should be printed to the console.
+            /* BT1 and BT2 are nearly identical. Therefore, every single one of its values should be printed to the console except for 3 and 7.
               
+            BT1:
                  4
                /   \
               2     5
              / \
             1   3
 
+            BT2:
                  4
                /   \
               2     5
              / \
-            1   3
+            1   7
          
              */
 
-            Node bt2node3 = new Node(3);
+            Node bt2node7 = new Node(7);
             Node bt2node4 = new Node(4);
             BinaryTree bt2 = new BinaryTree(bt2node4);
             Node bt2node1 = new Node(1);
@@ -46,10 +48,11 @@ namespace TreeIntersection
             bt2node4.LeftChild = bt2node2;
             bt2node4.RightChild = bt2node5;
             bt2node2.LeftChild = bt2node1;
-            bt2node2.RightChild = bt2node3;
+            bt2node2.RightChild = bt2node7;
 
             List<object> overlapping = TreeIntersections(bt1, bt2);
 
+            // This will print 2, 1, 5. but it should print 4, 2, 1, 5
             foreach (var val in overlapping)
             {
                 Console.WriteLine(val);
@@ -64,11 +67,9 @@ namespace TreeIntersection
 
             ht1 = RecursivePreOrder(bt1.Root, ht1);
             ht2 = RecursivePreOrder(bt2.Root, ht2);
-
             Trees.Classes.Node current1 = bt1.Root;
 
-            RecursivePreOrder(current1.LeftChild, overlappingValues, ht1, ht2);
-            RecursivePreOrder(current1.RightChild, overlappingValues, ht1, ht2);
+            RecursivePreOrder(current1, overlappingValues, ht1, ht2);
 
             return overlappingValues;
         }
