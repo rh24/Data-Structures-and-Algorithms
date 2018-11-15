@@ -16,7 +16,7 @@ namespace Hashtables
         }
 
         /// <summary>
-        /// Add key value pair to Hashtable object. First generate the bytes from a given string. Then, sum the ASCII values of each char in the string. Multiply it by the Hashtable object's prime number property, then use modulus to determine the index of the bucket the new key-value pair will be stored.
+        /// Add key value pair to Hashtable object. First generate the bytes from a given string. Then, sum the ASCII values of each char in the string. Multiply it by the Hashtable object's prime number property, then use modulus to determine the index of the bucket the new key-value pair will be stored. Update an existing node's value with the new passed in value if the same key already exists in the hashtable.
         /// </summary>
         /// <param name="key">String to look up in hashtable</param>
         /// <param name="value">Value to be stored in hashtable</param>
@@ -29,7 +29,8 @@ namespace Hashtables
                 Node nodeToAdd = new Node(value) { Key = key };
 
                 if (HT[bucket] == null) HT[bucket] = new LinkedList(nodeToAdd);
-                else HT[bucket].Add(nodeToAdd);
+                else if (Find(key) == null) HT[bucket].Add(nodeToAdd);
+                else FindNode(key).Value = value;
 
                 return true;
             }
@@ -57,6 +58,25 @@ namespace Hashtables
                     if ((string)current.Key == key) return current.Value;
                     current = current.Next;
                 }
+            }
+
+            return null;
+        }
+
+        /// <summary>
+        /// Find and return a node instead of a value. 
+        /// </summary>
+        /// <param name="key">String to look up in hashtable</param>
+        /// <returns>Node found</returns>
+        public Node FindNode(string key)
+        {
+            int bucket = GetHash(key);
+            Node current = HT[bucket].Head;
+
+            while (current != null)
+            {
+                if ((string)current.Key == key) return current;
+                current = current.Next;
             }
 
             return null;
