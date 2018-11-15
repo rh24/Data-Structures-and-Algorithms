@@ -59,6 +59,12 @@ namespace TreeIntersection
             }
         }
 
+        /// <summary>
+        /// This method takes in two binary trees as inputs and outputs the common values that are contained in both of the trees.
+        /// </summary>
+        /// <param name="bt1">First binary tree</param>
+        /// <param name="bt2">Second binary tree</param>
+        /// <returns>A generic list of objects that represent shared values</returns>
         public static List<object> TreeIntersections(BinaryTree bt1, BinaryTree bt2)
         {
             Hashtable ht1 = new Hashtable();
@@ -73,7 +79,13 @@ namespace TreeIntersection
 
             return overlappingValues;
         }
-         
+
+        /// <summary>
+        /// This is a helper methods that recursively traverses a binary tree in depth-first pre-order traversal. As the tree is traversed, each node is stored in a hashtable.
+        /// </summary>
+        /// <param name="node">Node of binary tree</param>
+        /// <param name="ht">Hashtable to store node values as key-value pairs</param>
+        /// <returns>Hashtable containing all key-value pairs produced from each node of the binary tree</returns>
         public static Hashtable RecursivePreOrder(Trees.Classes.Node node, Hashtable ht)
         {
             if (node == null) return ht;
@@ -83,6 +95,14 @@ namespace TreeIntersection
             return ht;
         }
 
+        /// <summary>
+        /// This method traverses abinary tree recursively using depth-first pre-order traversal and returns a generic list object containing shared values from two hashtables.
+        /// </summary>
+        /// <param name="node">Node of binary tree</param>
+        /// <param name="returnList">Generic List of objects</param>
+        /// <param name="ht1">First hashtable containing key-value pairs produced from nodes of binary tree 1</param>
+        /// <param name="ht2">Second hashtable containing key-value pairs produced from nodes of binary tree 2</param>
+        /// <returns></returns>
         public static List<object> RecursivePreOrder(Trees.Classes.Node node, List<object> returnList, Hashtable ht1, Hashtable ht2)
         {
             if (node == null) return returnList;
