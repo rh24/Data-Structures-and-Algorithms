@@ -16,4 +16,10 @@
     <ProjectReference Include="..\Repeated_Word\Repeated_Word.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="Hashtables">
+      <HintPath>..\..\..\Data-Structures\Hashtables\Hashtables\bin\Debug\netcoreapp2.1\Hashtables.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
