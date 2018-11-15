@@ -1,5 +1,6 @@
 ﻿using Hashtables;
 using System;
+using System.Text;
 
 namespace Repeated_Word
 {
@@ -18,32 +19,32 @@ namespace Repeated_Word
             // Expected: "an"
             string test5 = "an apple ate an apple and became an apple.";
 
-
+            Console.WriteLine(RepeatedWord(test1));
+            Console.WriteLine(RepeatedWord(test2));
+            Console.WriteLine(RepeatedWord(test3));
+            Console.WriteLine(RepeatedWord(test4));
+            Console.WriteLine(RepeatedWord(test5));
         }
 
-        public string RepeatedWord(string longWord)
+        public static string RepeatedWord(string longWord)
         {
             Hashtable ht = new Hashtable();
-            string temp = "";
+            StringBuilder temp = new StringBuilder();
             string letters = "abcdefghijklmnopqrstuvwrxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
             for (int i = 0; i < longWord.Length; i++)
             {
-                if (letters.Contains(longWord[i])) String.Concat(temp, longWord[i]);
-                else if (ht.Find(temp) == null)
+                if (letters.Contains(longWord[i])) temp.Append(longWord[i]);
+                else if (ht.Find(temp.ToString()) == null)
                 {
-                    ht.Add(temp, 1);
-                    temp = "";
+                    ht.Add(temp.ToString(), 1);
+                    temp.Clear();
                 }
-                else
-                {
-                    //ht.Add(temp, 2);
-                    return temp;
-                }
+                else return temp.ToString();
             }
 
             // Just in case there's no punctuation at the end of the string, and we still need to check for/add the last word of longWord in hashtable:
-            if (ht.Find(temp) != null) return temp;
+            if (ht.Find(temp.ToString()) != null) return temp.ToString();
             else return null;
         }
     }
