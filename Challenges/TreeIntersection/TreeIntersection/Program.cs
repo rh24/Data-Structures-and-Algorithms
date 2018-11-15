@@ -6,7 +6,7 @@ using Node = Trees.Classes.Node;
 
 namespace TreeIntersection
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {

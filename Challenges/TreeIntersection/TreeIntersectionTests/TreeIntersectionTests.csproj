@@ -13,6 +13,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TreeIntersection\TreeIntersection.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Trees">
       <HintPath>..\..\..\Data-Structures\Trees\Trees\bin\Debug\netcoreapp2.1\Trees.dll</HintPath>
     </Reference>
