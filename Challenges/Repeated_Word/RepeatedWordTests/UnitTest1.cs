@@ -14,13 +14,11 @@ namespace RepeatedWordTests
         [InlineData("acatateanappleandbecameacatapple", null)]
         [InlineData("turtles move slowly. they are turtles", "turtles")]
         [InlineData("an apple ate an apple and became an apple.", "an")]
+        [InlineData(";;;;; ; ;; ;;;", null)]
         public void TestRepeatedWord(string longWord, string expected)
         {
             string repeatedWord = RepeatedWord(longWord);
             Assert.Equal(expected, repeatedWord);
         }
-
-        // Add more tests later:
-        // [InlineData(";;;;; ; ;; ;;;", null)]
     }
 }
