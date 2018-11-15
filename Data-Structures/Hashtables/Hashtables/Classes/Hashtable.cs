@@ -48,12 +48,16 @@ namespace Hashtables
         public object Find(string key)
         {
             int bucket = GetHash(key);
-            Node current = HT[bucket].Head;
 
-            while (current != null)
+            if (HT[bucket] != null)
             {
-                if ((string)current.Key == key) return current.Value;
-                current = current.Next;
+                Node current = HT[bucket].Head;
+
+                while (current != null)
+                {
+                    if ((string)current.Key == key) return current.Value;
+                    current = current.Next;
+                }
             }
 
             return null;
