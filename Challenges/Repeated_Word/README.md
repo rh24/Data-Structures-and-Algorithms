@@ -4,7 +4,9 @@ Write a function that takes in a lengthy string as its argument. Without using a
 
 ## Big O
 
-* Space complexity:
-* Time complexity:
+* Space complexity: O(n)
+* Time complexity: O(n)
 
 ## Whiteboard Solution
+
+![RepeatedWord](https://github.com/rh24/Data-Structures-and-Algorithms/blob/repeated-word/assets/RepeatedWord.jpg)
