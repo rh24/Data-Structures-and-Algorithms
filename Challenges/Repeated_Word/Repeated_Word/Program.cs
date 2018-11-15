@@ -26,6 +26,11 @@ namespace Repeated_Word
             Console.WriteLine(RepeatedWord(test5));
         }
 
+        /// <summary>
+        /// Method that will take in a long string and return the first repeated word in the string.
+        /// </summary>
+        /// <param name="longWord">Lengthy string</param>
+        /// <returns>First repeated word</returns>
         public static string RepeatedWord(string longWord)
         {
             Hashtable ht = new Hashtable();
