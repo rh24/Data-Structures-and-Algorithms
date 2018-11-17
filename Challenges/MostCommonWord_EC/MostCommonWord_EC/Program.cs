@@ -4,7 +4,7 @@ using System.Text;
 
 namespace MostCommonWord_EC
 {
-    class Program
+    public class Program
     {
         static void Main(string[] args)
         {
@@ -22,10 +22,10 @@ namespace MostCommonWord_EC
 
             for (int i = 0; i < book.Length; i++)
             {
+                if (mostCommon == null) mostCommon = temp.ToString();
                 if (letters.Contains(Char.ToLower(book[i]))) temp.Append(book[i]);
                 else
                 {
-                    if (mostCommon == null) mostCommon = temp.ToString();
                     if (!ht.Contains(temp.ToString())) ht.Add(temp.ToString(), 1);
                     else
                     {
