@@ -13,6 +13,11 @@ namespace Insertion_Sort
             Console.WriteLine("Insertion sorted array:" + Environment.NewLine + string.Join(", ", InsertionSort(unsorted)));
         }
 
+        /// <summary>
+        /// Method sorts an unsorted array using the Insertion Sort algorithm.
+        /// </summary>
+        /// <param name="myArr">Unsorted array</param>
+        /// <returns>Sorted array in ascending order</returns>
         public static int[] InsertionSort(int[] myArr)
         {
             for (int i = 1; i < myArr.Length; i++)
