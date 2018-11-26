@@ -3,6 +3,6 @@
     public class Node
     {
         public Node Next { get; set; }
-        public object Value { get; set; }
+        public string Value { get; set; }
     }
 }

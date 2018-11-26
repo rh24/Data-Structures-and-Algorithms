@@ -5,6 +5,11 @@ namespace Graph.Classes
 {
     public class Graph
     {
-        public LinkedList<LinkedList<Tuple<Node, int>>> AdjacencyList { get; set; }
+        public LinkedList<LinkedList<Tuple<Node, string>>> AdjacencyList { get; set; }
+
+        public Graph()
+        {
+            AdjacencyList = new LinkedList<LinkedList<Tuple<Node, string>>>();
+        }
     }
 }
