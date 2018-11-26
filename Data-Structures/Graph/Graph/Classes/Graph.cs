@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Graph.Classes
 {
-    class Graph
+    public class Graph
     {
+        public LinkedList<LinkedList<Tuple<Node, int>>> AdjacencyList { get; set; }
     }
 }
