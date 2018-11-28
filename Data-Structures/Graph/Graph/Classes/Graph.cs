@@ -5,11 +5,11 @@ namespace Graph.Classes
 {
     public class Graph
     {
-        public List<Tuple<Node, string>> AdjacencyList { get; set; }
+        public List<Tuple<Vertex, string>> AdjacencyList { get; set; }
 
         public Graph()
         {
-            AdjacencyList = new List<Tuple<Node, string>>();
+            AdjacencyList = new List<Tuple<Vertex, string>>();
         }
 
         /// <summary>
@@ -17,7 +17,7 @@ namespace Graph.Classes
         /// </summary>
         /// <param name="parent"></param>
         /// <param name="child"></param>
-        public void AddEdge(Tuple<Node, string> parent, Tuple<Node, string> child)
+        public void AddEdge(Tuple<Vertex, string> parent, Tuple<Vertex, string> child)
         {
             foreach (var item in AdjacencyList)
             {
@@ -32,8 +32,8 @@ namespace Graph.Classes
         /// <param name="node"></param>
         public void AddVertex(Node node)
         {
-            List<Tuple<Node, string>> newList = new List<Tuple<Node, string>>();
-            AdjacencyList.Add(new Tuple<Node, string>(node, node.Value));
+            List<Tuple<Vertex, string>> newList = new List<Tuple<Vertex, string>>();
+            AdjacencyList.Add(new Tuple<Vertex, string>(node, node.Value));
         }
 
         public void GetNodes()
@@ -41,7 +41,7 @@ namespace Graph.Classes
 
         }
 
-        public LinkedList<Tuple<Node, int>> GetNeighbors(Node node)
+        public LinkedList<Tuple<Vertex, int>> GetNeighbors(Vertex node)
         {
 
         }
