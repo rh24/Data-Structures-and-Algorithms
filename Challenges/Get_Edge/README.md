@@ -15,3 +15,4 @@ Space complexity: O(1)
 
 ## Whiteboard Solution
 
+![GetEdge](https://github.com/rh24/Data-Structures-and-Algorithms/blob/get-edge/assets/GetEdge.jpg)
